@@ -1,38 +1,61 @@
-<div class="">
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-6">
 
-  <table>
-    <tr>
-      <td> <button type="button" id="1" class="btn btn-outline-primary acientos" > 1 </button></td>
-      <td> <button type="button" id="2" class="btn btn-outline-primary acientos"> 2 </button></td>
-      <td> <button type="button" id="3" class="btn btn-outline-primary acientos"> 3 </button></td>
-      <td> <button type="button" id="4" class="btn btn-outline-primary acientos"> 4 </button></td>
-      <td> <button type="button" id="5" class="btn btn-outline-primary acientos"> 5 </button></td>
-    </tr>
+      <table>
+        <tr>
+          <td> <button type="button" id="1" (click)='aciento(1)' class="btn btn-outline-primary acientos" > 1 </button></td>
+          <td> <button type="button" id="2" (click)='aciento(2)' class="btn btn-outline-primary acientos"> 2 </button></td>
+          <td> <button type="button" id="3" (click)='aciento(3)' class="btn btn-outline-primary acientos"> 3 </button></td>
+          <td> <button type="button" id="4" (click)='aciento(4)' class="btn btn-outline-primary acientos"> 4 </button></td>
+          <td> <button type="button" id="5" (click)='aciento(5)' class="btn btn-outline-primary acientos"> 5 </button></td>
+        </tr>
 
-    <tr>
-      <td> <button type="button" id="6" class="btn btn-outline-primary acientos"> 6 </button></td>
-      <td> <button type="button" id="7" class="btn btn-outline-primary acientos"> 7 </button></td>
-      <td> <button type="button" id="8" class="btn btn-outline-primary acientos" > 8 </button></td>
-      <td> <button type="button" id="9" class="btn btn-outline-primary acientos" > 9 </button></td>
-      <td> <button type="button" id="10" class="btn btn-outline-primary acientos"> 10 </button></td>
-    </tr>
+        <tr>
+          <td> <button type="button" id="6" (click)='aciento(6)' class="btn btn-outline-primary acientos"> 6 </button></td>
+          <td> <button type="button" id="7" (click)='aciento(7)' class="btn btn-outline-primary acientos"> 7 </button></td>
+          <td> <button type="button" id="8" (click)='aciento(8)' class="btn btn-outline-primary acientos" > 8 </button></td>
+          <td> <button type="button" id="9" (click)='aciento(9)' class="btn btn-outline-primary acientos" > 9 </button></td>
+          <td> <button type="button" id="10" (click)='aciento(10)' class="btn btn-outline-primary acientos"> 10 </button></td>
+        </tr>
 
-    <tr>
-      <td> <button type="button" id="11" class="btn btn-outline-primary acientos"> 11 </button></td>
-      <td> <button type="button" id="12"  class="btn btn-outline-primary acientos"> 12 </button></td>
-      <td> <button type="button" id="13" class="btn btn-outline-primary acientos"> 13 </button></td>
-      <td> <button type="button" id="14" class="btn btn-outline-primary acientos"> 14 </button></td>
-      <td> <button type="button" id="15" class="btn btn-outline-primary acientos"> 15 </button></td>
-    </tr>
+        <tr>
+          <td> <button type="button" id="11" (click)='aciento(11)' class="btn btn-outline-primary acientos"> 11 </button></td>
+          <td> <button type="button" id="12" (click)='aciento(12)' class="btn btn-outline-primary acientos"> 12 </button></td>
+          <td> <button type="button" id="13" (click)='aciento(13)' class="btn btn-outline-primary acientos"> 13 </button></td>
+          <td> <button type="button" id="14" (click)='aciento(14)' class="btn btn-outline-primary acientos"> 14 </button></td>
+          <td> <button type="button" id="15" (click)='aciento(15)' class="btn btn-outline-primary acientos"> 15 </button></td>
+        </tr>
 
-    <tr>
-      <td> <button type="button" id="16" class="btn btn-outline-primary acientos"> 16 </button></td>
-      <td> <button type="button" id="17" class="btn btn-outline-primary acientos"> 17 </button></td>
-      <td> <button type="button" id="18" class="btn btn-outline-primary acientos"> 18 </button></td>
-      <td> <button type="button" id="19" class="btn btn-outline-primary acientos"> 19 </button></td>
-      <td> <button type="button" id="20" class="btn btn-outline-primary acientos"> 20 </button></td>
-    </tr>
+        <tr>
+          <td> <button type="button" id="16" (click)='aciento(16)' class="btn btn-outline-primary acientos"> 16 </button></td>
+          <td> <button type="button" id="17" (click)='aciento(17)' class="btn btn-outline-primary acientos"> 17 </button></td>
+          <td> <button type="button" id="18" (click)='aciento(18)' class="btn btn-outline-primary acientos"> 18 </button></td>
+          <td> <button type="button" id="19" (click)='aciento(19)' class="btn btn-outline-primary acientos"> 19 </button></td>
+          <td> <button type="button" id="20" (click)='aciento(20)' class="btn btn-outline-primary acientos"> 20 </button></td>
+        </tr>
 
-  </table>
+      </table>
 
+    </div>
+
+    <div class="col-md-6">
+
+      <form class="form">
+        <h2 class="form">Boleto</h2>
+        <br>
+         Presentacion: {{ presentacion.id }}
+        <br>
+         Asiento:  {{ a.id }}
+        <br>
+         Usuario:  {{ usuario }}
+        <br>
+        <button class=" btn-primary btn-block" type="submit" (click)= "compra()" >Comprar</button>
+        <br>
+        <button class=" btn-primary btn-block" type="submit"  >Pagar</button>
+      </form>
+
+    </div>
+
+  </div>
 </div>

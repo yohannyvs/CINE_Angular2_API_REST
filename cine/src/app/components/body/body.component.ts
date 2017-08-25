@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PeliculasService } from '../services/peliculas.service'
+import { ActivatedRoute } from '@angular/router';
+import { PeliculasService } from '../services/peliculas.service';
 
 @Component({
   selector: 'app-body',

@@ -6,18 +6,24 @@ import 'rxjs/add/operator/map';
 export class MantenimientosService
 {
   aciento:number;
-  cedula:string;
-  presentacion:number;
   acientos:string [] = [];
+  compras:number;
 
   constructor( private http:Http ) { }
 
-  compra()
+  compra(id_presentacion, aciento, usuario)
   {
+    let url= "http://localhost:53344/Cine_api_rest_spring/compra?admin=0&id_present="+ id_presentacion +"&aciento="+ aciento +"&cedula="+usuario+"";
 
+    return this.http.get( url )
+                    .map( res => {
+                      console.log(res);
+                      this.compras = res.json()
+                      console.log(this.compras)
+                    } )
   }
 
-  acientos_ocupados(presentacion)
+  acientos_ocupados(presentacion:number)
   {
     let url= "http://localhost:53344/Cine_api_rest_spring/acientos?presentacion="+ presentacion +"";
 
