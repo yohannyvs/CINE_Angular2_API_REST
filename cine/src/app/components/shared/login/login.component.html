@@ -1,0 +1,15 @@
+<div class="container col-md-4 text-md-center login">
+
+      <form class="form-signin" (ngSubmit)="ingresar()">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <br>
+        <label for="usuario" class="sr-only">Usuario</label>
+        <input type="text" class="form-control" name="user" [(ngModel)]="user" placeholder="Usuario" required autofocus>
+        <br>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" class="form-control"  name="passw" [(ngModel)]="pass" placeholder="Contraseña" required>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+      </form>
+
+  </div>

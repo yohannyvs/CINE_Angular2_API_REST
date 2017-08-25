@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+      <div class="card main-container" style="width: 20rem;" *ngFor="let peli of _peliculaservice.pelicula; let i = index">
+
+        <div class="card-block form-control">
+          <p class="card-title">Nombre: &nbsp;&nbsp;&nbsp; {{ peli.nombre }} </p>
+          <hr>
+
+          <p class="card-title">Categoria:  &nbsp;&nbsp;&nbsp; {{ peli.categoria }}</p>
+          <hr>
+
+          <p>Hora: &nbsp;&nbsp;&nbsp; {{ peli.hora }} </p>
+          <hr>
+
+          <p> Sala: &nbsp;&nbsp;&nbsp; {{ peli.num_sala }} </p>
+          <hr>
+
+          <p> Idioma: &nbsp;&nbsp;&nbsp; {{ peli.idioma }} </p>
+          <hr>
+
+          <div class="offset-md-4">
+            <a [routerLink]="['/aciento',peli.id_presentacion]" class="btn btn-primary">Button</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+</div>
