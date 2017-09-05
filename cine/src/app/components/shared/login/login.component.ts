@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   ingresar()
   {
-    console.log(this.user, this.pass);
     this._loginService.login(this.user, this.pass).subscribe();
   }
 

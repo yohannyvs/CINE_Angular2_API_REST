@@ -7,9 +7,21 @@ export class MantenimientosService
 {
   aciento:number;
   acientos:string [] = [];
-  compras:number;
+  factura:number;
+  pago;
 
   constructor( private http:Http ) { }
+
+  pagar(num_tar:number, fecha:string, num_seg:string)
+  {
+    let url= "http://localhost:53344/Cine_api_rest_spring/pago?num_fact="+this.factura+"&num_tar="+num_tar+"&fecha="+fecha+"&num_seg="+num_seg+"";
+    return this.http.get( url )
+                    .map( res => {
+                      console.log(res);
+                      this.pago = res.json()
+                      console.log(this.pago)
+                    } )
+  }
 
   compra(id_presentacion, aciento, usuario)
   {
@@ -17,9 +29,8 @@ export class MantenimientosService
 
     return this.http.get( url )
                     .map( res => {
-                      console.log(res);
-                      this.compras = res.json()
-                      console.log(this.compras)
+                      this.factura = res.json()
+                      console.log("Factura ", this.factura)
                     } )
   }
 

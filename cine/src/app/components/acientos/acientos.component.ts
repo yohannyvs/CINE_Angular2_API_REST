@@ -12,8 +12,15 @@ export class AcientosComponent implements OnInit{
   presentacion;
   a;
   res;
+  factura:number;
+  num_tar:number;
+  num_seg:string;
+  fecha:string;
+  anno:string;
+  mes:string;
   acientos:string[] =[];
-  usuario = this.ls.user;
+  //usuario = this.ls.user;
+  usuario
 
   constructor( private ms:MantenimientosService, private router:ActivatedRoute, private ls:LoginService )
   {
@@ -21,7 +28,7 @@ export class AcientosComponent implements OnInit{
 
     this.ms.acientos_ocupados(parseInt(this.presentacion.id.toString())).subscribe();
 
-    ls.user;
+    this.usuario = this.ls.user;
 
   }
 
@@ -41,17 +48,19 @@ export class AcientosComponent implements OnInit{
 
   compra()
   {
-    let res;
-    res = this.ms.compra( parseInt(this.presentacion.id.toString()), parseInt(this.a.id.toString()), this.usuario ).subscribe();
+    this.ms.compra( parseInt(this.presentacion.id.toString()), parseInt(this.a.id.toString()), this.usuario ).subscribe();
+    alert("Boleto Comprado con Exito");
+    console.log( "factura ", this.factura);
+  }
 
-    if(res != 1)
-    {
-      alert("Boleto Comprado con Exito");
-    }
-    else
-    {
-      alert("Error");
-    }
+  pagar()
+  {
+    this.mes = (<HTMLInputElement> document.getElementById('mes')).value
+    this.anno = (<HTMLInputElement> document.getElementById('anno')).value
+    this.fecha = ""+this.mes+"/"+this.anno+"";
+    this.res = this.ms.pagar(this.num_tar, this.fecha, this.num_seg).subscribe();
+    console.log("res ", this.res);
+    alert("Pago Exitoso");
   }
 
   ocupados()
@@ -75,14 +84,12 @@ export class AcientosComponent implements OnInit{
       let btn17 = document.getElementById('17');
       let btn18 = document.getElementById('18');
       let btn19 = document.getElementById('19');
-      let btn20 = document.getElementById('10');
+      let btn20 = document.getElementById('20');
 
       if(this.acientos[0] != "no")
       {
         for( let i of this.acientos )
         {
-          console.log(this.ms.acientos);
-
           if( btn1.id == i.toString() )
           {
             btn1.style.backgroundColor = "red";
